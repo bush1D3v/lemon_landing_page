@@ -1,0 +1,273 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header header header"
+                         "hero hero hero hero"
+                         "about about about about"
+                         "services services services services"
+                         "projects projects projects projects"
+                         "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: #ffffff;
+}
+
+.header .header-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    align-items: center;
+    min-height: 75px;
+}
+
+.header h1{
+    font-size: 3rem;
+    font-weight: 700;
+    transition: color 0.3s ease-in-out;
+}
+
+.header a:hover h1{
+    color: coral;
+}
+
+
+.hero{
+    grid-area: hero;
+    height: 89vh;
+    background: url('../images/lemons.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.hero::after{
+    content: url('../images/seta_preta.png');
+    position: absolute;
+    height: 35px;
+    bottom: 30px;
+    animation: downarrow 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes downarrow{
+    0% {
+        -webkit-transform: translateY(0); opacity: 0.4;
+    }
+    100%{
+        -webkit-transform: translateY(0.7em); opacity: 0.9;
+    }
+}
+
+@media (max-width:445px){
+    .hero{
+        height: 60vh;
+    }
+
+    .hero h2{
+        font-size: 2.5rem;
+    }
+}
+
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    margin: 0 auto;
+}
+
+.about .item{
+    padding: 20%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.about .item h3{
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+.about .item p{
+    font-size: 1.8rem;
+    margin: 30px 0px;
+    font-weight: 400;
+}
+
+.about .item .btn-know-more{
+    font-size: 1.6rem;
+    align-self: flex-start;
+}
+
+.about .item .btn-know-more:hover{
+    font-weight: 700;
+}
+
+.about .image{
+    height: 100%;
+    width: 100%;
+}
+
+.about .image.right{
+    background: url('../images/bridge.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.about .image.left{
+    background: url('../images/sky.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+@media (max-width:550px){
+    .about .item{
+        text-align: center;
+    }
+
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+
+.services{
+    grid-area: services;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.services .service{
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.services .service img{
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.services .service h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.services .service p{
+    font-size: 2rem;
+    font-weight: 400;
+    max-width: 400px;
+    margin: 20px auto 0;
+    line-height: 25px;
+}
+
+.services .service:nth-child(1){
+    background-color: lightskyblue;
+}
+
+.services .service:nth-child(2){
+    background-color: lightpink;
+}
+
+@media (max-width:550px){
+    .services{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects img{
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+.projects a:hover img{
+    opacity: 0.8;
+}
+
+@media (max-width:768px){
+    .projects{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:425px){
+    .projects{
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.footer{
+    grid-area: footer;
+    display: flex;
+    background-color: lightgreen;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0px;
+}
+
+.footer h4{
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.footer nav{
+    margin: 50px 0;
+}
+
+.footer nav ul{
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.footer nav ul li a{
+    font-weight: 500;
+    font-size: 2rem;
+    transition: 0.3s ease-in-out;
+}
+
+.footer nav ul li a:hover{
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.footer .social a{
+    font-size: 2rem;
+    transition: 0.2s ease-in-out;
+}
+
+.footer .social a{
+    margin: 20px;
+}
+
+.footer .social a:hover{
+    color: #fff;
+}
