@@ -1,4 +1,4 @@
-# Landing Page
+# Lemon Landing Page
 Projeto de uma <strong>Landing Page</strong> personalizável - 100% responsiva e harmônica
 
 <div>
